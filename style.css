@@ -1,0 +1,39 @@
+body {
+
+    background: linear-gradient(rgba( 0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url(space.jpg) ;
+    background-size: cover;
+    background-position: center;
+}
+
+h2 {
+    text-align: center;
+    }
+
+
+.inscri {
+background: rgba(201, 201, 211, 0.5);
+padding: 30px
+}
+
+.connect {
+background: rgba(201, 201, 211, 0.5);
+padding: 30px
+}
+
+.form {
+    padding: 30px;
+}
+
+
+.box-a {
+    padding: 80px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.box-b {
+    padding: 80px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
