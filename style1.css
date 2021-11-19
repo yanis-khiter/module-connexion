@@ -1,14 +1,27 @@
+
+/* ****** INSCRIPION & CONNEXIN ****** */
+
+html {
+    font-family: Arial;
+}
+
 body {
 
-    background: linear-gradient(rgba( 0, 0, 50, 0.5), rgba(0, 0, 50, 0.5)), url(space.jpg) ;
+    background: url(space.jpg) ;
     background-size: cover;
     background-position: center;
 }
 
-h2 {
+
+h1 {
     text-align: center;
+
     }
 
+a {
+text-decoration: none;
+color: red;
+}
 
 .inscri {
 background: rgba(201, 201, 211, 0.5);
@@ -36,4 +49,28 @@ padding: 30px
     margin-left: 25%;
     margin-right: 25%;
 }
+
+#button{
+    margin-top: 10%;
+    text-align: center;
+    border-radius: 5px;
+
+}
+
+input {
+    border : 1px solid black ;
+    padding: 5px 10px;
+    margin-left: 10px;
+
+}
+
+
+.msg {
+    text-align: center;
+    color: red;
+    font-weight: bold;
+}
+
+
+
 

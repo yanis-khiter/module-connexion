@@ -1,0 +1,25 @@
+ /* ****** PAGE D'ACCUEIL **** */ 
+
+ body {
+
+}
+
+h1 {
+    text-align: center;
+    color: black
+}
+
+h2 {
+    text-align: center;
+    color: black
+}
+
+h3 {
+    text-align: center;
+    color: black
+}
+
+a {
+text-decoration: none;
+color: red;
+}

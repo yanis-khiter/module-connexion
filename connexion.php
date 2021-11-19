@@ -15,15 +15,10 @@ plusieurs) variables de session sont créées. -->
 
 if(isset($_POST['login'])&& isset($_POST['password'])){
 
-
   $login = $_POST['login']; 
 
   $password = $_POST['password']; 
   
-
-  if($password == $password_confirm){  
-
-}
 }
 
 ?>
@@ -36,7 +31,7 @@ if(isset($_POST['login'])&& isset($_POST['password'])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Module de connexion</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="style1.css"> 
 
 </head>
 <body>
@@ -44,21 +39,29 @@ if(isset($_POST['login'])&& isset($_POST['password'])){
     <div class="box-b">
         <div class="connect"> 
 
-            <h2>Connectez-vous</h2>
+            <h1>Connectez-vous</h1>
 
-            <form class="form" action = "" method ="post">
+            
 
-                <div class="log2">
-                    <label>Login</label>
-                    <input type ="text" name="prenom" >
-                </div>
+            <form method ="post" action = "connexion.php" class="form" >
 
-                <div class="mdp2">
-                    <label>Mot de Passe</label>
-                    <input type ="text" name="nom" >
-                </div>
+            <table>
 
-                    <button type="submit" class="btn btn-primary"> Connexion </button>
+                <tr>
+                    <td>Login</td>
+                    <td><input type="text" name="login" placeholder='Exemple : "Yanis13 ..."'></td>
+                </tr>
+                <tr>
+                    <td>Mot de Passe</td>
+                    <td><input type="password" name="password" placeholder='Exemple : "**** ..."'></td>
+                </tr>
+
+            </table>
+
+            <div id="button">
+            <input type="submit"value="Se connecter">
+            </div>  
+
                 
             </form>
 

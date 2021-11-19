@@ -10,24 +10,42 @@ données et l’utilisateur est redirigé vers la page de connexion. -->
 
 <?php
 
-if(isset($_POST['prenom'])&& isset($_POST['nom'])&& isset($_POST['password'])&& isset($_POST['confirmepassword'])){
+$bdd = mysqli_connect('localhost', 'root', '', 'moduleconnexion');
 
-  $prenom = $_POST['prenom'];
+mysqli_set_charset($bdd , 'utf8');
+
+$message = '';
+
+if(isset($_POST['prenom'])&& isset($_POST['nom'])&& isset($_POST['login'])&& isset($_POST['password'])&&  isset($_POST['confirmepassword']))
+
+{ 
+
+$prenom = $_POST['prenom'];
+$nom = $_POST['nom']; 
+$login = $_POST['login']; 
+$password = $_POST['password']; 
+$password_confirme = $_POST['confirmepassword'];
+
+
+$requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$login'");
   
-  $nom = $_POST['nom']; 
+$resultat = mysqli_fetch_all($requete);
 
-  $login = $_POST['login']; 
+    if ($password != $password_confirme) {
+        $message = 'Les deux mots de passes ne sont pas identique'; } 
 
-  $password = $_POST['password']; 
+    elseif (count($resultat) != 0){
+        $message='Login déjà pris !'; } 
 
-  $password_confirm = $_POST['confirmepassword'];
-  
+    else {
 
-  if($password == $password_confirm){  
-    header('Location:connexion.php');
+    $requete = mysqli_query($bdd, "INSERT INTO utilisateurs(prenom, nom, login, password) VALUES ('$prenom','$nom','$login','$password') ");
+
+    header('Location: connexion.php');
 
 }
 }
+
 
 ?>   
 
@@ -38,50 +56,56 @@ if(isset($_POST['prenom'])&& isset($_POST['nom'])&& isset($_POST['password'])&& 
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mondule d'inscription</title>
-    <link rel="stylesheet" type="text/css" href="style.css"> 
+    <link rel="stylesheet" type="text/css" href="style1.css"> 
 
 </head>
 <body>
-    
 
 <div class="box-a">
     <div class="inscri">  
 
-        <h2>Inscrivez-vous</h2>
+        <h1>Inscrivez-vous</h1>
 
-        <form class="form" action = "" method ="post">
+        <p>Bienvenue dans SpaceLand, prêt à decoller  ? Inscrivez-vous. Sinon <a href="connexion.php"> connectez-vous.</a></p>
 
-            <div class="prenom">
-                <label>Prenom</label>
-                <input type ="text" name="prenom" >
-            </div>
-           
-            <div class="nom">
-                <label>Nom</label>
-                <input type ="text" name="nom" >
-            </div>
-            
-            <div class="log">
-                <label>Login</label>
-                <input type ="text" name="login" >
-            </div>
-           
-            <div class="mdp">
-                <label>Mot de Passe</label>
-                <input type ="text" name="password">
-            </div>
-                
-            <div class="confirmmd">
-                <label>Confirmez Mot de Passe</label>
-                <input type ="text" name="confirmepassword" >
-            </div>
+        <form method="post" action="inscription.php" class="form" >
 
-                <button type="submit" class="btn btn-primary"> Inscription </button>
+            <table>
+                <tr>
+                    <td>Prénom</td>
+                    <td><input type="text" name="prenom" placeholder='Exemple : "Yanis..."'></td>
+                </tr>
+                <tr>
+                    <td>Nom</td>
+                    <td><input type="text" name="nom" placeholder='Exemple : "Khiter..."'></td>
+                </tr>
+                <tr>
+                    <td>Login</td>
+                    <td><input type="text" name="login" placeholder='Exemple : "Yanis13..."'></td>
+                </tr>
+                <tr>
+                    <td>Mot de Passe</td>
+                    <td><input type="password" name="password" placeholder='Exemple : "****..."'></td>
+                </tr>
+                <tr>
+                    <td>Confirmer Mot de Passe</td>
+                    <td><input type="password" name="confirmepassword" placeholder='Exemple : "****..."'></td>
+                </tr>
+            </table>
+
+                <div id="button">
+                <input type="submit"value="S'inscrire">
+                </div>  
+
+                <?php
+                echo "<p class='msg'>". $message. '</p>' ;
+                ?>
 
         </form>
-        
     </div>
 </div>
+
+
 
 
 </body>
