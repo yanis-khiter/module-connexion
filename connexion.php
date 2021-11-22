@@ -13,16 +13,44 @@ plusieurs) variables de session sont créées. -->
 
 <?php
 
+
+$bdd = mysqli_connect('localhost', 'root', '', 'moduleconnexion');
+
+mysqli_set_charset($bdd , 'utf8');
+
+$message = '';
+
+
 if(isset($_POST['login'])&& isset($_POST['password'])){
 
   $login = $_POST['login']; 
-
   $password = $_POST['password']; 
+
+
+  $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$login' && password = '$password'");
   
+
+  $ligne = mysqli_num_rows($requete);
+
+
+if ($ligne==1) {
+    $message = 'Vous êtes connecté'; 
+
+$_SESSION['login']=$login;
+
+    header('Location: profil.php');
 }
 
-?>
+else {
+    $message = 'Utilisateur inconnu ! '; 
 
+
+}
+}
+
+
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -62,6 +90,9 @@ if(isset($_POST['login'])&& isset($_POST['password'])){
             <input type="submit"value="Se connecter">
             </div>  
 
+            <?php
+                echo "<p class='msg'>". $message. '</p>' ;
+                ?>
                 
             </form>
 

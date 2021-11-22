@@ -72,5 +72,50 @@ input {
 }
 
 
+ /* ****** PAGE D'ACCUEIL **** */ 
+
+
+.bodyaccueil { 
+
+    background: url(moonn.jpg) ;
+    background-size: cover;
+    
+}
+
+.h1accueil {
+    margin-top: 10%;
+    text-align: center;
+    color:white
+}
+
+
+.h2accueil {
+    text-align: center;
+    color: white;
+    margin-top: 5%;
+    
+}
+
+.aacueil {
+text-decoration: none;
+color: red;
+}
+
+
+
+ /* ****** PROFIL **** */ 
+
+.bodyprofil {
+    background: url(lune.jpg) ;
+    background-size: cover;
+    margin-top: 5%;
+}
+
+ .h1profil {
+     text-align: center;
+     color: rgb(44, 184, 219);
+     margin-top: 5%;
+ }
+
 
 
