@@ -28,6 +28,8 @@ $password_confirme = $_POST['confirmepassword'];
 
 
 $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$login'");
+
+
   
 $resultat = mysqli_fetch_all($requete);
 

@@ -107,7 +107,6 @@ color: red;
 
 .bodyprofil {
     background: url(lune.jpg) ;
-    background-size: cover;
     margin-top: 5%;
 }
 
@@ -116,6 +115,14 @@ color: red;
      color: rgb(44, 184, 219);
      margin-top: 5%;
  }
+
+
+.h2profil {
+    text-align: center;
+    color: rgb(255, 0, 0);
+
+}
+
 
 
 

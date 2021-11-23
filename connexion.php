@@ -48,9 +48,8 @@ else {
 }
 }
 
-
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -93,6 +92,7 @@ else {
             <?php
                 echo "<p class='msg'>". $message. '</p>' ;
                 ?>
+
                 
             </form>
 
