@@ -13,6 +13,7 @@ plusieurs) variables de session sont créées. -->
 
 <?php
 
+session_start();
 
 $bdd = mysqli_connect('localhost', 'root', '', 'moduleconnexion');
 
@@ -28,25 +29,38 @@ if(isset($_POST['login'])&& isset($_POST['password'])){
 
 
   $requete = mysqli_query($bdd, "SELECT * FROM utilisateurs WHERE login = '$login' && password = '$password'");
-  
 
-  $ligne = mysqli_num_rows($requete);
+  $resultat= mysqli_fetch_assoc($requete);
 
 
-if ($ligne==1) {
-    $message = 'Vous êtes connecté'; 
+  $_SESSION['userconnect']=[
+      'id'  => $resultat['id'],
+      'login' => $resultat['login'],
+      'prenom' => $resultat['prenom'],
+      'nom' => $resultat['nom'],
+      'password' => $resultat['password']
+    ];
 
-$_SESSION['login']=$login;
 
-    header('Location: profil.php');
+
+if ($resultat['login']=='admin') {
+
+
+header('Location: admin.php');
+}
+        
+elseif($resultat['login']==$login)
+{
+
+header('Location: profil.php'); 
+} 
+
+
+else { 
+$message = '<br>'.'Utilisateur inconnu ! '; }
+
 }
 
-else {
-    $message = 'Utilisateur inconnu ! '; 
-
-
-}
-}
 
 ?>
 
