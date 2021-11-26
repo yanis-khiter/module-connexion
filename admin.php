@@ -11,7 +11,8 @@ la base de données. -->
 
 session_start();
 
-$bdd = mysqli_connect('localhost', 'root', '', 'yanis-khiter_moduleconnexion');
+include 'connect.php' ;
+
 
 mysqli_set_charset($bdd , 'utf8');
 

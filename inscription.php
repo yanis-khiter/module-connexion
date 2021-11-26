@@ -10,11 +10,7 @@ données et l’utilisateur est redirigé vers la page de connexion. -->
 
 <?php
 
-
-
-$bdd = mysqli_connect('localhost', 'root', '', 'yanis-khiter_moduleconnexion');
-
-mysqli_set_charset($bdd , 'utf8');
+include 'connect.php' ;
 
 $message = '';
 
