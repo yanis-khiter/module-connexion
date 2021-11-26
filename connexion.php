@@ -15,7 +15,7 @@ plusieurs) variables de session sont créées. -->
 
 session_start();
 
-$bdd = mysqli_connect('localhost', 'root', '', 'moduleconnexion');
+$bdd = mysqli_connect('localhost', 'root', '', 'yanis-khiter_moduleconnexion');
 
 mysqli_set_charset($bdd , 'utf8');
 
