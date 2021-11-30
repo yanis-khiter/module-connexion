@@ -31,28 +31,29 @@ if(isset($_POST['login'])&& isset($_POST['password'])){
 
   $resultat= mysqli_fetch_assoc($requete);
 
+if(!empty($resultat)) {
 
   $_SESSION['userconnect']=[
       'id'  => $resultat['id'],
       'login' => $resultat['login'],
       'prenom' => $resultat['prenom'],
       'nom' => $resultat['nom'],
-      'password' => $resultat['password']
+      'password' => $resultat['password'],
     ];
 
-
-
-if ($resultat['login']=='admin') {
-
-
-header('Location: admin.php');
+    if($resultat['login']==$login) {
 }
-        
-elseif($resultat['login']==$login)
-{
+
 
 header('Location: profil.php'); 
 } 
+
+
+if (isset($resultat['login']) && $resultat['login']=='admin') {
+    
+
+header('Location: admin.php');
+}
 
 
 else { 
@@ -116,7 +117,6 @@ $message = '<br>'.'Utilisateur inconnu ! '; }
 </body>
 </html>
 
-<!-- === -->
 
 
  
