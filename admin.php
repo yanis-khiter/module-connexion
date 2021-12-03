@@ -71,7 +71,13 @@ mysqli_set_charset($bdd , 'utf8');
     
         </tbody>
     </table>
+
+    </div>
+    <h2 class="h2admin"> <a id="a-admin" href="deconnexion.php">Déconnexion</a> </h2>
+    </div>
+
 </div>
+
 
 
 </body>

@@ -61,35 +61,35 @@ $resultat = mysqli_fetch_all($requete);
 </head>
 <body>
 
+
 <div class="box-a">
     <div class="inscri">  
+        <h1 class="h1inscr">Inscrivez-vous</h1>
 
-        <h1>Inscrivez-vous</h1>
-
-        <p>Bienvenue dans SpaceLand, prêt à decoller  ? Inscrivez-vous. Sinon <a href="connexion.php"> connectez-vous.</a></p>
+        <p class="p">Bienvenue dans SpaceLand, prêt à decoller  ? Inscrivez-vous. <br> Sinon <a href="connexion.php"> connectez-vous.</a></p>
 
         <form method="post" action="inscription.php" class="form" >
 
             <table>
                 <tr>
                     <td>Prénom</td>
-                    <td><input type="text" name="prenom" placeholder='Exemple : "Yanis..."'></td>
+                    <td><input type="text" name="prenom" placeholder='Exemple : "Yanis..."' required></td>
                 </tr>
                 <tr>
                     <td>Nom</td>
-                    <td><input type="text" name="nom" placeholder='Exemple : "Khiter..."'></td>
+                    <td><input type="text" name="nom" placeholder='Exemple : "Khiter..."' required></td>
                 </tr>
                 <tr>
                     <td>Login</td>
-                    <td><input type="text" name="login" placeholder='Exemple : "Yanis13..."'></td>
+                    <td><input type="text" name="login" placeholder='Exemple : "Yanis13..."' required></td>
                 </tr>
                 <tr>
                     <td>Mot de Passe</td>
-                    <td><input type="password" name="password" placeholder='Exemple : "****..."'></td>
+                    <td><input type="password" name="password" placeholder='Exemple : "****..."' required></td>
                 </tr>
                 <tr>
                     <td>Confirmer Mot de Passe</td>
-                    <td><input type="password" name="confirmepassword" placeholder='Exemple : "****..."'></td>
+                    <td><input type="password" name="confirmepassword" placeholder='Exemple : "****..."' required></td>
                 </tr>
             </table>
 
@@ -103,10 +103,12 @@ $resultat = mysqli_fetch_all($requete);
 
         </form>
     </div>
+            <div>
+            <h2 class="h2inscri"> <a id="a-inscrini" href="index.php">Page d'accueil</a> </h2>
+            </div>
 </div>
 
-
-
+       
 
 </body>
 </html>

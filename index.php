@@ -16,7 +16,7 @@
 <h1 class="h1accueil">Bienvenu jeune astronaute !</h1>
 
 <h2  class="h2accueil">Prêt à monter dans la fusée ? Pour cela : <a class="aacueil" href="inscription.php"> Inscris-toi.</a> Si c'est déjà fait : 
-<a class="aacueil" href="connexion.php">Connectes-toi !</a></h2>
+<a class="a-acueil" href="connexion.php">Connectes-toi !</a></h2>
 
 </body>
 </html>

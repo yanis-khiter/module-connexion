@@ -100,7 +100,6 @@ else {
 </form>
 
 </div>
-
 <h2 class="h2profil"> <a href="deconnexion.php">Déconnexion</a> </h2>
 </div>
 
